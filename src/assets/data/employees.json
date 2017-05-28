@@ -73,9 +73,9 @@
    },
    {
       "id":10,
-      "firstName":"Janusz",
-      "lastName":"Obalik",
-      "dateOfBirth":"7.06.1971",
+      "firstName":"Andrzej",
+      "lastName":"Kornik",
+      "dateOfBirth":"17.06.1971",
       "position":"sprzedawca",
       "salary":"1750"
    },

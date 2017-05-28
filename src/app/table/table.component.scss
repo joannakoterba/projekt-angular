@@ -1,0 +1,27 @@
+.table-data {
+  .table-header {
+    background-color: #1E8BC3;
+    color: #fff;
+
+    th:hover {
+      cursor: pointer;
+    }
+  }
+
+  .col-width {
+    width: 140px
+  }
+}
+
+.search-box {
+  .form-inline {
+    .form-group {
+      float: right;
+      margin-bottom: 8px;;
+
+      label {
+        font-weight: normal;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.navbar {
+  border-radius: 0;
+
+  &-brand {
+    color: #fff;
+    font-size: 2.3rem;
+  }
+
+  &-nav > li > a {
+    color: #fff;
+    font-size: 1.5rem;
+  }
+}
+

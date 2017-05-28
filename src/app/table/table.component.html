@@ -1,3 +1,49 @@
-<p>
-  table works!
-</p>
+<div class="search-box">
+  <form class="form-inline">
+    <div class="form-group">
+      <label for="inputSearch">Szukaj:</label>
+      <input type="text" class="form-control" id="inputSearch" name="search" [(ngModel)]="search">
+    </div>
+  </form>
+</div>
+
+<table class="table table-data">
+  <thead class="table-header">
+    <tr>
+      <th (click)="onSort('id')">
+        Id
+        <app-sort *ngIf="field == 'id'" [direction]="direction"></app-sort>
+      </th>
+      <th (click)="onSort('firstName')">
+        Imię
+        <app-sort *ngIf="field == 'firstName'" [direction]="direction"></app-sort>
+      </th>
+      <th (click)="onSort('lastName')">
+        Nazwisko
+        <app-sort *ngIf="field == 'lastName'" [direction]="direction"></app-sort>
+      </th>
+      <th (click)="onSort('dateOfBirth')">
+        Data urodzenia
+        <app-sort *ngIf="field == 'dateOfBirth'" [direction]="direction"></app-sort>
+      </th>
+      <th (click)="onSort('position')">
+        Stanowisko
+        <app-sort *ngIf="field == 'position'" [direction]="direction"></app-sort>
+      </th>
+      <th (click)="onSort('salary')">
+        Wynagrodzenie
+        <app-sort *ngIf="field == 'salary'" [direction]="direction"></app-sort>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of rows | dataSearch:search | dataSort:field:direction">
+      <td  class="col-width">{{row.id}}</td>
+      <td>{{row.firstName}}</td>
+      <td>{{row.lastName}}</td>
+      <td>{{row.dateOfBirth}}</td>
+      <td>{{row.position}}</td>
+      <td  class="col-width">{{row.salary}}</td>
+    </tr>
+  </tbody>
+</table>

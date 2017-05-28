@@ -8,21 +8,31 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { TableComponent } from './table/table.component';
+import { DataService } from "./data.service";
+import {NgxDatatableModule} from "@swimlane/ngx-datatable";
+import {DataSearchPipe} from "./table/data-search.pipe";
+import {DataSortPipe} from "./table/data-sort.pipe";
+import { SortComponent } from './sort/sort.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    TableComponent
+    TableComponent,
+    SortComponent,
+    DataSearchPipe,
+    DataSortPipe,
+    SortComponent
   ],
   imports: [
+    NgxDatatableModule,
     BrowserModule,
     FormsModule,
     HttpModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
