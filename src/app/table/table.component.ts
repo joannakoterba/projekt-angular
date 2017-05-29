@@ -30,7 +30,6 @@ export class TableComponent implements OnInit {
     newEmployee.id = this.rows.length + 1;
     this.zone.run(() => {
       this.rows.push(newEmployee);
-      console.log(this.rows);
     });
   }
 }
