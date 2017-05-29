@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, NgZone} from '@angular/core';
 import { DataService } from "../data.service";
 
 @Component({
@@ -13,7 +13,7 @@ export class TableComponent implements OnInit {
   direction: string = "asc";
   p: number = 1;
 
-  constructor(private dataService:DataService) { }
+  constructor(private dataService:DataService, private zone: NgZone) { }
 
   ngOnInit() {
     this.dataService.getData().subscribe(response => {
@@ -27,6 +27,10 @@ export class TableComponent implements OnInit {
   }
 
   employeeAdded(newEmployee) {
-    this.rows.push({firstName: newEmployee.firstName});
+    newEmployee.id = this.rows.length + 1;
+    this.zone.run(() => {
+      this.rows.push(newEmployee);
+      console.log(this.rows);
+    });
   }
 }

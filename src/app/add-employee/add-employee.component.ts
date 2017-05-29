@@ -20,9 +20,9 @@ export class AddEmployeeComponent implements OnInit {
         Validators.minLength(2)]],
       dateOfBirth: ['',
         [Validators.required,
-        Validators.minLength(2)]],
-      position: ['', Validators.minLength(2)],
-      salary: ['', Validators.minLength(2)]
+        Validators.minLength(6)]],
+      position: ['', Validators.minLength(4)],
+      salary: ''
     });
   }
 
@@ -30,6 +30,6 @@ export class AddEmployeeComponent implements OnInit {
 
   onSubmit() {
     this.employeeAdded.emit(this.employeeForm.value);
-    console.log("test");
+    this.employeeForm.reset()
   }
 }

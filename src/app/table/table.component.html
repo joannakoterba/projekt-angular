@@ -37,7 +37,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let row of rows | dataSearch:search | dataSort:field:direction | paginate: { itemsPerPage: 7, currentPage: p }">
+    <tr *ngFor="let row of rows | dataSearch:search | dataSort:field:direction | paginate: { itemsPerPage: 20, currentPage: p }">
       <td  class="col-width">{{row.id}}</td>
       <td>{{row.firstName}}</td>
       <td>{{row.lastName}}</td>

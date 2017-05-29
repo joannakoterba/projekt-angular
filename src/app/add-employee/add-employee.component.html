@@ -5,25 +5,42 @@
     <form class="form" [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="inputName">Imię</label>
-        <input type="text" class="form-control" id="inputName" formControlName="firstName" name="firstName" placeholder="Imię">
+        <div [ngClass]="{error: !employeeForm.get('firstName').valid && employeeForm.get('firstName').touched}">
+          <input type="text" class="form-control" id="inputName" formControlName="firstName" name="firstName" placeholder="Imię">
+        </div>
+        <div *ngIf="employeeForm.get('firstName').hasError('required') && employeeForm.get('firstName').touched" class="error-box">To pole jest wymagane!</div>
+        <div *ngIf="employeeForm.get('firstName').hasError('minlength') && employeeForm.get('firstName').touched" class="error-box">Pole musi zawierać minimum dwa znaki</div>
       </div>
       <div class="form-group">
         <label for="inputlastName">Naziwsko</label>
-        <input type="text" class="form-control" id="inputlastName" formControlName="lastName" name="lastname" placeholder="Nazwisko">
+        <div [ngClass]="{error: !employeeForm.get('lastName').valid && employeeForm.get('lastName').touched}">
+          <input type="text" class="form-control" id="inputlastName" formControlName="lastName" name="lastname" placeholder="Nazwisko">
+        </div>
+        <div *ngIf="employeeForm.get('lastName').hasError('required') && employeeForm.get('lastName').touched" class="error-box">To pole jest wymagane!</div>
+        <div *ngIf="employeeForm.get('lastName').hasError('minlength') && employeeForm.get('lastName').touched" class="error-box">Pole musi zawierać minimum dwa znaki</div>
       </div>
       <div class="form-group">
         <label for="inputDate">Data urodzenia</label>
-        <input type="text" class="form-control" id="inputDate" formControlName="dateOfBirth" name="date" placeholder="Data urodzenia">
+        <div [ngClass]="{error: !employeeForm.get('dateOfBirth').valid && employeeForm.get('dateOfBirth').touched}">
+          <input type="text" class="form-control" id="inputDate" formControlName="dateOfBirth" name="date" placeholder="Data urodzenia">
+        </div>
+        <div *ngIf="employeeForm.get('dateOfBirth').hasError('required') && employeeForm.get('dateOfBirth').touched" class="error-box">To pole jest wymagane!</div>
+        <div *ngIf="employeeForm.get('dateOfBirth').hasError('minlength') && employeeForm.get('dateOfBirth').touched" class="error-box">Pole musi zawierać minimum sześć znaków</div>
       </div>
       <div class="form-group">
         <label for="inputPosition">Stanowisko</label>
-        <input type="text" class="form-control" id="inputPosition" formControlName="position" name="position" placeholder="Stanowisko">
+        <div [ngClass]="{error: !employeeForm.get('position').valid && employeeForm.get('position').touched}">
+          <input type="text" class="form-control" id="inputPosition" formControlName="position" name="position" placeholder="Stanowisko">
+        </div>
+        <div *ngIf="employeeForm.get('position').hasError('minlength') && employeeForm.get('position').touched" class="error-box">Pole musi zawierać minimum dwa znaki</div>
       </div>
       <div class="form-group">
         <label for="inputSalary">Wynagrodzenie</label>
-        <input type="text" class="form-control" id="inputSalary" formControlName="salary" name="salary" placeholder="Wynagrodzenie">
+        <div [ngClass]="{error: !employeeForm.get('salary').valid && employeeForm.get('salary').touched}">
+          <input type="text" class="form-control" id="inputSalary" formControlName="salary" name="salary" placeholder="Wynagrodzenie">
+        </div>
       </div>
-      <button type="submit" class="btn btn-primary">Dodaj</button>
+      <button type="submit" class="btn btn-primary" [ngClass]="{disabled: !employeeForm.valid}">Dodaj</button>
     </form>
   </div>
 </div>
