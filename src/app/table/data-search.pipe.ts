@@ -1,7 +1,8 @@
 import {Pipe, PipeTransform} from "@angular/core";
 
 @Pipe({
-  name: 'dataSearch'
+  name: 'dataSearch',
+  pure: false
 })
 
 export class DataSearchPipe implements PipeTransform {
