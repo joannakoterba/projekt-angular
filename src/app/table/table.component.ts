@@ -11,6 +11,7 @@ export class TableComponent implements OnInit {
   search: string = "";
   field: string = "id";
   direction: string = "asc";
+  p: number = 1;
 
   constructor(private dataService:DataService) { }
 
@@ -23,5 +24,9 @@ export class TableComponent implements OnInit {
   onSort(name: string) {
     this.field = name;
     this.direction = this.direction == "asc" ? "desc" : "asc";
+  }
+
+  employeeAdded(newEmployee) {
+    this.rows.push({firstName: newEmployee.firstName});
   }
 }

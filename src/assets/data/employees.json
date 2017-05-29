@@ -118,6 +118,30 @@
       "dateOfBirth":"16.04.1964",
       "position":"kierowca",
       "salary": "2100"
+   } ,
+   {
+      "id":16,
+      "firstName":"Józef",
+      "lastName":"Marzec",
+      "dateOfBirth":"9.12.1951",
+      "position":"magazynier",
+      "salary":"2500"
+   },
+   {
+      "id":17,
+      "firstName":"Grażyna",
+      "lastName":"Wielka",
+      "dateOfBirth":"19.04.1967",
+      "position":"sprzedawca",
+      "salary":"1600"
+   },
+   {
+      "id":18,
+      "firstName":"Michał",
+      "lastName":"Czech",
+      "dateOfBirth":"4.04.1984",
+      "position":"kierowca",
+      "salary": "2100"
    }
 ]
 

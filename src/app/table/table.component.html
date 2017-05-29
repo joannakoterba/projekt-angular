@@ -37,7 +37,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let row of rows | dataSearch:search | dataSort:field:direction">
+    <tr *ngFor="let row of rows | dataSearch:search | dataSort:field:direction | paginate: { itemsPerPage: 7, currentPage: p }">
       <td  class="col-width">{{row.id}}</td>
       <td>{{row.firstName}}</td>
       <td>{{row.lastName}}</td>
@@ -47,3 +47,7 @@
     </tr>
   </tbody>
 </table>
+
+<pagination-controls class="my-pagination" (pageChange)="p = $event" previousLabel="" nextLabel=""></pagination-controls>
+<app-add-employee (employeeAdded)="employeeAdded($event)"></app-add-employee>
+

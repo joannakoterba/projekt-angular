@@ -5,3 +5,20 @@ html {
 body {
   font-size: 1.4rem;
 }
+
+.my-pagination {
+  .ngx-pagination  {
+    float: right;
+     &:hover {
+       cursor: pointer;
+     }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    .current {
+      background-color: #1E8BC3;
+    }
+  }
+}
